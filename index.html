@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stamp | Boutique Hotel Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 20;
+            vertical-align: middle;
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e5e2e1;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#F8F5F1",
+                        "surface": "#FFFFFF",
+                        "primary": "#1F1F1F",
+                        "secondary": "#7A7A7A",
+                        "on-background": "#1F1F1F",
+                        "outline-variant": "#E5E2E1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.25rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "40px",
+                        "margin-desktop": "100px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["EB Garamond"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["EB Garamond"],
+                        "headline-sm": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "headline-md": ["48px", {"lineHeight": "1.05", "fontWeight": "400"}],
+                        "label-caps": ["10px", {"lineHeight": "1.2", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                        "body-md": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-sm": ["28px", {"lineHeight": "1.3", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen selection:bg-primary selection:text-white">
+<!-- SideNavBar -->
+<nav class="flex flex-col h-full py-12 bg-white h-full w-80 fixed left-0 top-0 z-50">
+<div class="px-10 mb-20">
+<h1 class="font-headline-sm text-headline-sm text-primary tracking-tight italic">Stamp</h1>
+<p class="text-[10px] uppercase tracking-[0.4em] text-secondary mt-1 font-semibold">Management</p>
+</div>
+<div class="flex-1 px-8 space-y-1">
+<!-- Navigation Items -->
+<a class="flex items-center gap-5 px-5 py-3.5 rounded-xl text-primary font-medium bg-background transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="dashboard">dashboard</span>
+<span class="text-[14px]">Dashboard</span>
+</a>
+<a class="flex items-center gap-5 px-5 py-3.5 rounded-xl text-secondary hover:text-primary transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="menu_book">menu_book</span>
+<span class="text-[14px]">Guide</span>
+</a>
+<a class="flex items-center gap-5 px-5 py-3.5 rounded-xl text-secondary hover:text-primary transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="library_books">library_books</span>
+<span class="text-[14px]">Collections</span>
+</a>
+<a class="flex items-center gap-5 px-5 py-3.5 rounded-xl text-secondary hover:text-primary transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="monitoring">monitoring</span>
+<span class="text-[14px]">Analytics</span>
+</a>
+<a class="flex items-center gap-5 px-5 py-3.5 rounded-xl text-secondary hover:text-primary transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+<span class="text-[14px]">Profile</span>
+</a>
+<a class="flex items-center gap-5 px-5 py-3.5 rounded-xl text-secondary hover:text-primary transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="settings">settings</span>
+<span class="text-[14px]">Settings</span>
+</a>
+</div>
+<div class="px-8 mt-auto">
+<button class="w-full py-4 bg-primary text-white rounded-full text-[11px] font-label-caps hover:bg-black transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-primary/5 active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+            ADD LISTING
+        </button>
+<div class="mt-12 pt-10 border-t border-primary/5 flex items-center gap-4 px-2">
+<img class="w-11 h-11 rounded-full object-cover grayscale" data-alt="Manager portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHXDa9alaESK3PFaeBbHr0LWf5PrqKKQdwsL8UXB1d08GDDM3tPgSorL05dWiXUb45pRBc4wiZuvNq2ui4KLef9GUy-n2lub12MjHTqcoxSVtSkY8SR24r9_ZVGd9JFjGLCIhG3GVHw8-Tks4KZpH_wP_YJv_NCtzoLCFrFSo2wKXrzMngkz6M8AFE2zaR4fynLTlzKu-VylCYgaya0KMV6x6ceJ_hH_1JU-7F-YQ2DOc5g6HP1vIbgw"/>
+<div class="overflow-hidden">
+<p class="text-[13px] font-bold text-primary truncate">Holiday Retreat</p>
+<p class="text-[9px] text-secondary uppercase tracking-[0.15em] mt-0.5">Manager</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-80 min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 bg-background/90 backdrop-blur-md flex justify-between items-center w-full px-margin-desktop py-8 max-w-container-max mx-auto">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-lg group">
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-secondary/40 group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full bg-white border-none rounded-full pl-14 pr-8 py-4 text-sm focus:ring-0 transition-all placeholder:text-secondary/40 shadow-[0_2px_15px_rgba(0,0,0,0.03)]" placeholder="Search guests, places or analytics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-10 ml-10">
+<button class="relative text-secondary hover:text-primary transition-colors group">
+<span class="material-symbols-outlined text-[24px]" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full border-2 border-background"></span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]" data-icon="swap_horiz">swap_horiz</span>
+</button>
+<div class="h-6 w-[1px] bg-primary/10"></div>
+<div class="flex items-center gap-5 cursor-pointer group">
+<span class="text-[10px] font-label-caps text-secondary group-hover:text-primary transition-colors uppercase tracking-[0.2em]">Hotel Switcher</span>
+<div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden ring-1 ring-primary/5 p-0.5 group-hover:ring-primary/20 transition-all">
+<img class="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all" data-alt="Hotel Lobby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALdgHjZnchoYxqTI7fnBOq14j6Opm0rAS55XRGNUlHwvs1xBRrsaILniJqt6qD3X5SEGWZakFJFWkND7uVLwJ_4HDGerCBdLwPNt9ujoMDk3CaNJiDraNcKUntLP2P3XDcB7wk7tLgk-ZX6e1zQRK6__ei4VDexpXCmlnmolKOVaE_ao4g7JlfCEU4PF2FRgRthgooi1MLZ5g3bn0PkNyP3gbrHXI6ZpNbUtpzkMKW2k7gqy-amlQYDQ"/>
+</div>
+</div>
+</div>
+</header>
+<div class="px-margin-desktop py-12 max-w-container-max mx-auto">
+<!-- Hero Header -->
+<section class="flex justify-between items-end mb-24">
+<div class="max-w-2xl">
+<h2 class="font-headline-md text-headline-md text-primary leading-tight">
+                    Good afternoon, <br/>
+<span class="italic text-primary/80">Holiday Retreat</span>
+</h2>
+<p class="font-body-lg text-secondary mt-6">Your collection of guest experiences is performing beautifully this week. Explore the latest insights below.</p>
+</div>
+<button class="flex items-center gap-4 px-10 py-5 bg-primary text-white rounded-full text-[11px] font-label-caps hover:bg-black hover:-translate-y-1 active:scale-95 transition-all shadow-[0_15px_35px_rgba(0,0,0,0.12)]">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                ADD RECOMMENDATION
+            </button>
+</section>
+<!-- Dashboard Layout -->
+<div class="grid grid-cols-12 gap-12">
+<!-- Left Column: Analytics & Charts -->
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-white rounded-2xl shadow-[0_2px_40px_rgba(0,0,0,0.02)] border border-primary/[0.03]">
+<!-- Metric Cards as a header unit -->
+<div class="grid grid-cols-4 border-b border-primary/[0.03]">
+<div class="p-10 border-r border-primary/[0.03]">
+<p class="text-[9px] font-label-caps text-secondary mb-5 uppercase">Guide Views</p>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">1,284</h3>
+<div class="flex items-center gap-1.5 text-[9px] text-green-700 font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>
+                                12.5%
+                            </div>
+</div>
+<div class="p-10 border-r border-primary/[0.03]">
+<p class="text-[9px] font-label-caps text-secondary mb-5 uppercase">Stamps</p>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">452</h3>
+<div class="flex items-center gap-1.5 text-[9px] text-green-700 font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>
+                                8.2%
+                            </div>
+</div>
+<div class="p-10 border-r border-primary/[0.03]">
+<p class="text-[9px] font-label-caps text-secondary mb-5 uppercase">Shares</p>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">89</h3>
+<div class="flex items-center gap-1.5 text-[9px] text-secondary font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[12px]">horizontal_rule</span>
+                                0%
+                            </div>
+</div>
+<div class="p-10">
+<p class="text-[9px] font-label-caps text-secondary mb-5 uppercase">Bookings</p>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">316</h3>
+<div class="flex items-center gap-1.5 text-[9px] text-green-700 font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>
+                                24.1%
+                            </div>
+</div>
+</div>
+<!-- Engagement Chart Content -->
+<div class="p-12">
+<div class="flex justify-between items-center mb-16">
+<h3 class="text-lg font-bold text-primary tracking-tight uppercase">Engagement Insights</h3>
+<div class="flex gap-8">
+<button class="text-[10px] font-label-caps text-primary border-b-2 border-primary pb-1 uppercase">Weekly</button>
+<button class="text-[10px] font-label-caps text-secondary hover:text-primary transition-colors uppercase">Monthly</button>
+</div>
+</div>
+<div class="relative h-[400px] w-full">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="border-b border-primary/[0.04] w-full h-0"></div>
+<div class="border-b border-primary/[0.04] w-full h-0"></div>
+<div class="border-b border-primary/[0.04] w-full h-0"></div>
+<div class="border-b border-primary/[0.04] w-full h-0"></div>
+<div class="border-b border-primary/[0.08] w-full h-0"></div>
+</div>
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 700 360">
+<defs>
+<lineargradient id="chartGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#1F1F1F" stop-opacity="0.04"></stop>
+<stop offset="100%" stop-color="#1F1F1F" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,280 Q50,260 100,220 T200,180 T300,240 T400,100 T500,140 T600,120 T700,80" fill="none" stroke="#1F1F1F" stroke-linecap="round" stroke-width="2"></path>
+<path d="M0,280 Q50,260 100,220 T200,180 T300,240 T400,100 T500,140 T600,120 T700,80 V360 H0 Z" fill="url(#chartGradient)"></path>
+<circle cx="400" cy="100" fill="#1F1F1F" r="4"></circle>
+</svg>
+<div class="absolute bottom-[-40px] w-full flex justify-between px-2">
+<p class="text-[10px] font-label-caps text-secondary uppercase">Mon</p>
+<p class="text-[10px] font-label-caps text-secondary uppercase">Tue</p>
+<p class="text-[10px] font-label-caps text-secondary uppercase">Wed</p>
+<p class="text-[10px] font-label-caps text-primary font-bold uppercase">Thu</p>
+<p class="text-[10px] font-label-caps text-secondary uppercase">Fri</p>
+<p class="text-[10px] font-label-caps text-secondary uppercase">Sat</p>
+<p class="text-[10px] font-label-caps text-secondary uppercase">Sun</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Activity Feed -->
+<div class="col-span-12 lg:col-span-4 space-y-12">
+<!-- Recent Guest Activity -->
+<section class="bg-white p-12 rounded-2xl shadow-[0_2px_40px_rgba(0,0,0,0.02)] border border-primary/[0.03]">
+<div class="flex justify-between items-center mb-10">
+<h4 class="text-[11px] font-bold text-primary uppercase tracking-[0.2em]">Recent Activity</h4>
+<a class="text-[10px] font-label-caps text-secondary hover:text-primary transition-colors uppercase underline underline-offset-4 decoration-primary/10" href="#">View All</a>
+</div>
+<div class="space-y-10">
+<div class="flex items-start gap-6 group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-background flex items-center justify-center text-[10px] font-bold text-primary border border-primary/[0.03] shrink-0">EM</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-primary">Elena Moretti</p>
+<p class="text-xs text-secondary mt-1 leading-relaxed">Collected 'Le Sirenuse' stamp for her collection.</p>
+<p class="text-[10px] text-secondary/40 mt-3 flex items-center gap-1.5 uppercase tracking-tighter">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2 mins ago
+                                </p>
+</div>
+</div>
+<div class="flex items-start gap-6 group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-background flex items-center justify-center text-[10px] font-bold text-primary border border-primary/[0.03] shrink-0">JW</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-primary">Julian Weber</p>
+<p class="text-xs text-secondary mt-1 leading-relaxed">Shared 'Local Guide: Trastevere' with 3 guests.</p>
+<p class="text-[10px] text-secondary/40 mt-3 flex items-center gap-1.5 uppercase tracking-tighter">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 1 hour ago
+                                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Saved Places -->
+<section class="bg-white p-12 rounded-2xl shadow-[0_2px_40px_rgba(0,0,0,0.02)] border border-primary/[0.03]">
+<div class="flex justify-between items-center mb-10">
+<h4 class="text-[11px] font-bold text-primary uppercase tracking-[0.2em]">Latest Saved</h4>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] rounded-xl overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale-[0.2]" data-alt="Cafe Interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk99DV9dBlRYHJMr1Xb_lrVUX2zqmWMgzzBd5wo8O-kzN7Cpu1gtwKAJCYVmR5mQ-Y9TG7t3lI25t9JGv0zbp9xYNrSoeQux4SNdgIBvr0TUkMPk8mb5r06-xojYOJO-E7okOTWzr2nTll33JHV7tTTcgH_MV30OVRFdvVCQO38CJ5io7AcvWl3TVsXgPDUgK8d8SSY0y2q6IlePx7cPy2pURQemq7arYuO-opwPex-YRe1Qy2IaUn0g"/>
+</div>
+<p class="text-[13px] font-bold text-primary">Cafe Standard</p>
+<p class="text-[9px] text-secondary uppercase tracking-[0.15em] mt-1">Coffee</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] rounded-xl overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale-[0.2]" data-alt="Restaurant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJEJrJad_II_LeJMFqcYu9t7ffbelTdm_SxUjSFPWCvhw5A2jGTYfW34rY6738m95kQ2eG-6I8sTjNj8z9Vf-4Cf7geW4E5aq75-s7VZfasQczgLfw8qbAK8EgiIBdmLhJ10hXw1bdYUoBcnDtFoVUXX5MfZtwsStI-bpMDguqpu2dvEnZ2i1L_LMO1O78M9NHoMqlexh8sr7b0z9h0JP3u_fxB1qGbZxiGn9DAUnj_NQDEfRqbQmiCA"/>
+</div>
+<p class="text-[13px] font-bold text-primary">Osteria Roma</p>
+<p class="text-[9px] text-secondary uppercase tracking-[0.15em] mt-1">Dining</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Spacer for flow -->
+<div class="h-12"></div>
+<!-- Bottom Section: Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12">
+<!-- Popular Recommendations -->
+<div class="bg-white rounded-2xl border border-primary/[0.03] shadow-[0_2px_40px_rgba(0,0,0,0.02)] flex flex-col p-12">
+<h4 class="text-[11px] font-bold text-primary uppercase tracking-[0.2em] mb-10">Most Visited</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between py-4 group cursor-pointer border-b border-primary/[0.03] last:border-0">
+<div class="flex items-center gap-5">
+<span class="material-symbols-outlined text-[20px] text-primary/40 group-hover:text-primary transition-colors">restaurant</span>
+<span class="text-[14px] font-medium text-primary">Trattoria da Luigi</span>
+</div>
+<span class="text-[10px] font-label-caps text-secondary uppercase">840 Views</span>
+</div>
+<div class="flex items-center justify-between py-4 group cursor-pointer border-b border-primary/[0.03] last:border-0">
+<div class="flex items-center gap-5">
+<span class="material-symbols-outlined text-[20px] text-primary/40 group-hover:text-primary transition-colors">museum</span>
+<span class="text-[14px] font-medium text-primary">Galleria Arte Moderna</span>
+</div>
+<span class="text-[10px] font-label-caps text-secondary uppercase">620 Views</span>
+</div>
+<div class="flex items-center justify-between py-4 group cursor-pointer border-b border-primary/[0.03] last:border-0">
+<div class="flex items-center gap-5">
+<span class="material-symbols-outlined text-[20px] text-primary/40 group-hover:text-primary transition-colors">local_bar</span>
+<span class="text-[14px] font-medium text-primary">Vino &amp; Co Bar</span>
+</div>
+<span class="text-[10px] font-label-caps text-secondary uppercase">515 Views</span>
+</div>
+</div>
+</div>
+<!-- Draft Guides -->
+<div class="bg-white rounded-2xl border border-primary/[0.03] shadow-[0_2px_40px_rgba(0,0,0,0.02)] flex flex-col p-12">
+<h4 class="text-[11px] font-bold text-primary uppercase tracking-[0.2em] mb-10">Draft Guides</h4>
+<div class="space-y-10">
+<div class="group cursor-pointer">
+<div class="flex justify-between items-center mb-4">
+<h5 class="text-[14px] font-bold text-primary">Summer Artisan Route</h5>
+<span class="text-[9px] font-label-caps text-secondary uppercase">65%</span>
+</div>
+<div class="w-full h-1 bg-background rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[65%] rounded-full"></div>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="flex justify-between items-center mb-4">
+<h5 class="text-[14px] font-bold text-primary">Hidden Jazz Spots</h5>
+<span class="text-[9px] font-label-caps text-secondary uppercase">20%</span>
+</div>
+<div class="w-full h-1 bg-background rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[20%] rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-4 mt-4 border border-dashed border-primary/20 rounded-xl text-[10px] font-label-caps text-secondary hover:border-primary hover:text-primary transition-all uppercase">
+                        Create New Draft
+                    </button>
+</div>
+</div>
+<!-- Performance Insights -->
+<div class="bg-primary text-white rounded-2xl p-12 shadow-2xl flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/5 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>
+<div class="relative">
+<span class="material-symbols-outlined text-white/30 mb-10 text-[32px]">lightbulb</span>
+<h4 class="font-headline-sm text-headline-sm text-white mb-6 italic leading-tight">Performance Insight</h4>
+<p class="text-[15px] text-white/80 leading-relaxed font-body-md">
+                        Guests are showing high interest in <strong class="text-white font-medium">Outdoor Dining</strong> this month. Consider adding more terrace spots to your local guides.
+                    </p>
+</div>
+<a class="relative mt-12 text-[10px] font-label-caps uppercase tracking-[0.25em] underline underline-offset-8 decoration-white/20 hover:decoration-white transition-all w-fit" href="#">Refine Strategy</a>
+</div>
+</div>
+<!-- Recent Reviews Row -->
+<div class="mt-12">
+<section class="bg-white p-12 rounded-2xl shadow-[0_2px_40px_rgba(0,0,0,0.02)] border border-primary/[0.03]">
+<h4 class="text-[11px] font-bold text-primary uppercase tracking-[0.2em] mb-10">Guest Voice</h4>
+<div class="max-w-3xl">
+<div class="relative pt-6">
+<span class="absolute top-0 left-0 text-primary/10 text-7xl font-headline-md leading-none select-none">“</span>
+<p class="font-headline-sm text-headline-sm italic text-primary leading-relaxed relative z-10">
+                            "The recommendation for the hidden courtyard bakery was the highlight of our trip. Such a gem that we never would have found otherwise!"
+                        </p>
+<div class="mt-8 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="text-[11px] font-bold text-primary uppercase tracking-[0.1em]">Michael K.</span>
+<span class="h-px w-8 bg-primary/10"></span>
+<span class="text-[10px] text-secondary uppercase">Verified Guest</span>
+</div>
+<div class="flex gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Simple navigation interaction
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                navLinks.forEach(l => {
+                    l.classList.remove('text-primary', 'font-medium', 'bg-background');
+                    l.classList.add('text-secondary');
+                });
+                link.classList.add('text-primary', 'font-medium', 'bg-background');
+                link.classList.remove('text-secondary');
+            });
+        });
+    });
+</script>
+</body></html>
